@@ -1,7 +1,8 @@
 import mysql.connector
 from flask import Flask, jsonify
+from flask_cors import CORS  # permette richieste da Angular
 
-# Connect to MySQL
+# Connessione al database MySQL
 mydb = mysql.connector.connect(
   host="localhost",
   user="pythonuser",
@@ -11,51 +12,52 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 app = Flask(__name__)
+CORS(app)  # abilita richieste da http://localhost:4200
 
 # Route per la home page
 @app.route("/")
 def hello():
-    return "Hello, World!"
+    return "Server Flask attivo!"
 
 # Route per ottenere i Pokémon della Gen 1
 @app.route("/gen1")
 def gen1():
-    mycursor.execute("SELECT name FROM pokemon WHERE generation = 1")
+    mycursor.execute("SELECT name FROM PokeStats WHERE generation = 1")
     result = mycursor.fetchall()
     return jsonify([row[0] for row in result])
 
 # Route per ottenere i Pokémon della Gen 2
 @app.route("/gen2")
 def gen2():
-    mycursor.execute("SELECT name FROM pokemon WHERE generation = 2")
+    mycursor.execute("SELECT name FROM PokeStats WHERE generation = 2")
     result = mycursor.fetchall()
     return jsonify([row[0] for row in result])
 
 # Route per ottenere i Pokémon della Gen 3
 @app.route("/gen3")
 def gen3():
-    mycursor.execute("SELECT name FROM pokemon WHERE generation = 3")
+    mycursor.execute("SELECT name FROM PokeStats WHERE generation = 3")
     result = mycursor.fetchall()
     return jsonify([row[0] for row in result])
 
 # Route per ottenere i Pokémon della Gen 4
 @app.route("/gen4")
 def gen4():
-    mycursor.execute("SELECT name FROM pokemon WHERE generation = 4")
+    mycursor.execute("SELECT name FROM PokeStats WHERE generation = 4")
     result = mycursor.fetchall()
     return jsonify([row[0] for row in result])
 
 # Route per ottenere i Pokémon della Gen 5
 @app.route("/gen5")
 def gen5():
-    mycursor.execute("SELECT name FROM pokemon WHERE generation = 5")
+    mycursor.execute("SELECT name FROM PokeStats WHERE generation = 5")
     result = mycursor.fetchall()
     return jsonify([row[0] for row in result])
 
 # Route per ottenere i Pokémon della Gen 6
 @app.route("/gen6")
 def gen6():
-    mycursor.execute("SELECT name FROM pokemon WHERE generation = 6")
+    mycursor.execute("SELECT name FROM PokeStats WHERE generation = 6")
     result = mycursor.fetchall()
     return jsonify([row[0] for row in result])
 

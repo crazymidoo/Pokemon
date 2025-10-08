@@ -6,6 +6,7 @@ import { Generazione4Component } from './generazione4/generazione4.component';
 import { Generazione5Component } from './generazione5/generazione5.component';
 import { Generazione6Component } from './generazione6/generazione6.component';
 
+
 export const routes: Routes = [
   { path: 'Generazione1', component: Generazione1Component },
   { path: 'Generazione2', component: Generazione2Component },
