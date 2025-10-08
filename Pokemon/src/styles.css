@@ -5,3 +5,7 @@ body {
   background-color: #d9b3b3;  
   color: rgb(102, 79, 79);            
 }
+
+li{
+    cursor: pointer;
+}

@@ -1,1 +1,9 @@
-<p>generazione1 works!</p>
+<h2>Pokémon Generazione 1</h2>
+
+<ul class="list-group list-group-flush">
+  @for (p of pokemonList; track p) {
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span class="fw-medium">{{ p }}</span>
+    </li>
+  }
+</ul>

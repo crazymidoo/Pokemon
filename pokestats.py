@@ -62,4 +62,4 @@ def gen6():
     return jsonify([row[0] for row in result])
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True) # Permette ad Angular (o altri client) di raggiungere il server Flask e farli comunicare
