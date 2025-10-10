@@ -3,7 +3,21 @@
 <ul class="list-group list-group-flush">
   @for (p of pokemonList; track p) {
     <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span class="fw-medium">{{ p }}</span>
+      <span class="fw-medium">
+        {{ p.id }}<br>
+        Nome: {{ p.name }}<br>
+        Totale: {{ p.total }}<br>
+        HP: {{ p.HP }}<br>
+        Attacco: {{ p.attack }}<br>
+        Difesa: {{ p.defence }}<br>
+        Attacco Speciale: {{ p.sp_atk }}<br>
+        Difesa Speciale: {{ p.sp_def }}<br>
+        Velocità: {{ p.speed }}<br>
+        Generazione: {{ p.generation }}<br>
+        Leggendario: {{ p.legendary }}<br>
+        Tipo 1: {{ p.type1 }}<br>
+        Tipo 2: {{ p.type2 }}<br>
+      </span>
     </li>
   }
 </ul>
