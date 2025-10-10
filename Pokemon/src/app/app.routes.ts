@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-import { Generazione1Component } from './generazione1/generazione1.component';
-
+import { GenerazioneComponent } from './generazione/generazione.component';
 
 export const routes: Routes = [
-  { path: 'Generazione1', component: Generazione1Component }
+  { path: 'generazione/:gen', component: GenerazioneComponent },
+  { path: '', redirectTo: '/generazione/1', pathMatch: 'full' },
+  { path: '**', redirectTo: '/generazione/1' }
 ];
