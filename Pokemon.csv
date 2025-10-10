@@ -70,7 +70,7 @@ id,name,type1,type2,total,HP,attack,defense,sp_atk,sp_def,speed,generation,legen
 63,Abra,Psychic,,310,25,20,15,105,55,90,1,False
 64,Kadabra,Psychic,,400,40,35,30,120,70,105,1,False
 65,Alakazam,Psychic,,500,55,50,45,135,95,120,1,False
-65,AlakazamMega Alakazam,Psychic,,590,55,50,65,175,95,150,1,False
+65,MegaAlakazam,Psychic,,590,55,50,65,175,95,150,1,False
 66,Machop,Fighting,,305,70,80,50,35,35,35,1,False
 67,Machoke,Fighting,,405,80,100,70,50,60,45,1,False
 68,Machamp,Fighting,,505,90,130,80,65,85,55,1,False
@@ -475,7 +475,7 @@ id,name,type1,type2,total,HP,attack,defense,sp_atk,sp_def,speed,generation,legen
 426,Drifblim,Ghost,Flying,498,150,80,44,90,54,80,4,False
 427,Buneary,Normal,,350,55,66,44,44,56,85,4,False
 428,Lopunny,Normal,,480,65,76,84,54,96,105,4,False
-428,LopunnyMega Lopunny,Normal,Fighting,580,65,136,94,54,96,135,4,False
+428,MegaLopunny,Normal,Fighting,580,65,136,94,54,96,135,4,False
 429,Mismagius,Ghost,,495,60,60,60,105,105,105,4,False
 430,Honchkrow,Dark,Flying,505,100,125,52,105,52,71,4,False
 431,Glameow,Normal,,310,49,55,42,42,37,85,4,False
@@ -779,14 +779,8 @@ id,name,type1,type2,total,HP,attack,defense,sp_atk,sp_def,speed,generation,legen
 707,Klefki,Steel,Fairy,470,57,80,91,80,87,75,6,False
 708,Phantump,Ghost,Grass,309,43,70,48,50,60,38,6,False
 709,Trevenant,Ghost,Grass,474,85,110,76,65,82,56,6,False
-710,PumpkabooAverage Size,Ghost,Grass,335,49,66,70,44,55,51,6,False
-710,PumpkabooSmall Size,Ghost,Grass,335,44,66,70,44,55,56,6,False
-710,PumpkabooLarge Size,Ghost,Grass,335,54,66,70,44,55,46,6,False
-710,PumpkabooSuper Size,Ghost,Grass,335,59,66,70,44,55,41,6,False
-711,GourgeistAverage Size,Ghost,Grass,494,65,90,122,58,75,84,6,False
-711,GourgeistSmall Size,Ghost,Grass,494,55,85,122,58,75,99,6,False
-711,GourgeistLarge Size,Ghost,Grass,494,75,95,122,58,75,69,6,False
-711,GourgeistSuper Size,Ghost,Grass,494,85,100,122,58,75,54,6,False
+710,Pumpkaboo,Ghost,Grass,335,49,66,70,44,55,51,6,False
+711,Gourgeist,Ghost,Grass,494,65,90,122,58,75,84,6,False
 712,Bergmite,Ice,,304,55,69,85,32,35,28,6,False
 713,Avalugg,Ice,,514,95,117,184,44,46,28,6,False
 714,Noibat,Flying,Dragon,245,40,30,35,45,40,55,6,False
