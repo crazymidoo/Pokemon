@@ -1,23 +1,17 @@
-<ul class="list-group list-group-flush">
-  @for (p of pokemonList; track p) {
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span class="fw-medium">
-        <img [src]="p.image" alt="{{ p.name }}" width="200" height="200" />
-        <br>
-        ID: {{ p.id }}<br>
-        Nome: {{ p.name }}<br>
-        Tipo 1: {{ p.type1 }}<br>
-        Tipo 2: {{ p.type2 }}<br>
-        HP: {{ p.HP }}<br>
-        Attacco: {{ p.attack }}<br>
-        Difesa: {{ p.defence }}<br>
-        Attacco Speciale: {{ p.sp_atk }}<br>
-        Difesa Speciale: {{ p.sp_def }}<br>
-        Velocità: {{ p.speed }}<br>
-        Totale statistiche: {{ p.total }}<br>
-        Generazione: {{ p.generation }}<br>
-        Leggendario: {{ p.legendary }}<br>
-      </span>
-    </li>
-  }
-</ul>
+<div class="container pt-5">
+  <div class="row row-cols-1 row-cols-md-5 g-4">
+    @for (p of pokemonList; track p) {
+      <div class="col mt-3">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex flex-column align-items-center text-center">
+            <p class="fw-medium">
+              <img [src]="p.image" alt="{{ p.name }}" width="200" height="200" class="mb-2" />
+              ID Pokedex: {{ p.id }}<br>
+              Nome: {{ p.name }}<br>
+            </p>
+          </li>
+        </ul>
+      </div>
+    }
+  </div>
+</div>
