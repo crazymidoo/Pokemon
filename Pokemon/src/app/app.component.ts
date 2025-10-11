@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
   
     getGen1() {
       this.loading = true;
-      this.o = this.http.get<Pokemon[]>("https://fluffy-fishstick-q77ww9xxrwqpcx44g-5000.app.github.dev/gen1");
+      this.o = this.http.get<Pokemon[]>("https://fluffy-fishstick-q77ww9xxrwqpcx44g-5000.app.github.dev/");
       this.o.subscribe(this.getData1);
     }
     getData1 = (data: Pokemon[]) => {

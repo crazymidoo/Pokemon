@@ -27,7 +27,8 @@ CREATE TABLE PokeStats (
     sp_def INT,
     speed INT,
     generation INT,
-    legendary BOOLEAN
+    legendary BOOLEAN,
+    image VARCHAR(500) NOT NULL
 );
 """)
 
@@ -42,8 +43,8 @@ max_name_length = 255
 
 sql = """
 INSERT INTO PokeStats
-(id, name, type1, type2, total, HP, attack, defence, sp_atk, sp_def, speed, generation, legendary)
-VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+(id, name, type1, type2, total, HP, attack, defence, sp_atk, sp_def, speed, generation, legendary, image)
+VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
 """
 
 for i, row in poke_stats.iterrows():
