@@ -3,19 +3,21 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Pokemon } from '../models/Pokemon.model';
 import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-generazione',
   templateUrl: './generazione.component.html',
   styleUrls: ['./generazione.component.css'],
   standalone: true,
-  imports: []
+  imports: [CommonModule]
 })
 export class GenerazioneComponent implements OnInit {
   pokemonList: Pokemon[] = [];
-  loading!: boolean;
+  loading: boolean = false;
   o!: Observable<Pokemon[]>;
   generation!: number;
+  selectedPokemon: Pokemon | null = null;  // Variabile per il Pokémon selezionato
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
@@ -29,7 +31,7 @@ export class GenerazioneComponent implements OnInit {
     });
   }
 
-  getPokemonByGen(gen: number) {
+  getPokemonByGen(gen: number): void {
     this.loading = true;
     this.o = this.http.get<Pokemon[]>(`https://fluffy-fishstick-q77ww9xxrwqpcx44g-5000.app.github.dev/gen${gen}`);
     this.o.subscribe(data => {
@@ -37,5 +39,15 @@ export class GenerazioneComponent implements OnInit {
       this.loading = false;
       console.log(this.pokemonList);
     });
+  }
+
+  // Funzione per selezionare un Pokémon e mostrare il pop-up
+  showPokemonDetails(pokemon: Pokemon): void {
+    this.selectedPokemon = pokemon;
+  }
+
+  // Funzione per chiudere il pop-up
+  closePopup(): void {
+    this.selectedPokemon = null;
   }
 }

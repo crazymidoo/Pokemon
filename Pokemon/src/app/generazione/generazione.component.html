@@ -1,11 +1,12 @@
 <div class="container pt-5">
   <div class="row row-cols-1 row-cols-md-5 g-4">
+    <!-- Usando @for per iterare sui Pokémon -->
     @for (p of pokemonList; track p) {
-      <div class="col mt-3">
+      <div class="col mt-3" (click)="showPokemonDetails(p)">
         <ul class="list-group list-group-flush">
           <li class="list-group-item d-flex flex-column align-items-center text-center">
             <p class="fw-medium">
-              <img [src]="p.image" alt="{{ p.name }}" width="200" height="200" class="mb-2" />
+              <img [src]="p.image" alt="{{ p.name }}" width="200" height="200" class="mb-2" /><br>
               ID Pokedex: {{ p.id }}<br>
               Nome: {{ p.name }}<br>
             </p>
@@ -13,5 +14,24 @@
         </ul>
       </div>
     }
+  </div>
+</div>
+
+<!-- Pop-up per visualizzare le statistiche del Pokémon -->
+<div *ngIf="selectedPokemon" class="popup-overlay">
+  <div class="popup-content">
+    <img [src]="selectedPokemon.image" alt="{{ selectedPokemon.name }}" width="200" height="200" class="mb-2" />
+    <h2>{{ selectedPokemon.name }}</h2>
+    <p>ID Pokedex: {{ selectedPokemon.id }}</p>
+    <p>Tipo: {{ selectedPokemon.type1 }} {{ selectedPokemon.type2 }}</p>
+    <p>Salute (HP): {{ selectedPokemon.HP }}</p>
+    <p>Attacco: {{ selectedPokemon.attack }}</p>
+    <p>Difesa: {{ selectedPokemon.defence }}</p>
+    <p>Attacco Speciale: {{ selectedPokemon.sp_atk }}</p>
+    <p>Difesa Speciale: {{ selectedPokemon.sp_def }}</p>
+    <p>Velocità: {{ selectedPokemon.speed }}</p>
+    <p>Generazione: {{ selectedPokemon.generation }}</p>
+    <p>Leggendario: {{ selectedPokemon.legendary ? 'Sì' : 'No' }}</p>
+    <button (click)="closePopup()">Chiudi</button>
   </div>
 </div>

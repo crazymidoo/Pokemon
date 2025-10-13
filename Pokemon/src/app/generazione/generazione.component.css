@@ -1,0 +1,124 @@
+/* Contenitore principale */
+.container.pt-5 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Griglia di Pokémon */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Carta Pokémon */
+.list-group-item {
+  background-color: #f9f9f9;
+  border: 2px solid #f7c43c; /* Giallo Pokémon */
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 220px;
+  text-align: center;
+}
+
+.list-group-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Immagine Pokémon */
+.list-group-item img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.list-group-item img:hover {
+  transform: scale(1.1);
+}
+
+/* Testo */
+.fw-medium {
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #333;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* Pop-up overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Pop-up content */
+.popup-content {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  width: 320px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.popup-content img {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.popup-content h2 {
+  color: #f7c43c; /* Giallo Pokémon */
+  margin-bottom: 15px;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+.popup-content p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Bottone chiudi */
+.popup-content button {
+  margin-top: 20px;
+  background-color: #f7c43c;
+  color: #222;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #e5a800;
+}

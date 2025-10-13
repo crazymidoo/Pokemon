@@ -4,7 +4,7 @@ export interface Pokemon {
   defence: number
   generation: number
   id: number
-  legendary: number
+  legendary: string
   name: string
   sp_atk: number
   sp_def: number

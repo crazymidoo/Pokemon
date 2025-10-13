@@ -1,0 +1,78 @@
+/* Reset delle margin e padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4; /* Colore di sfondo neutro */
+  color: #333; /* Testo scuro per buona leggibilità */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Stile navbar */
+.navbar {
+  background: linear-gradient(145deg, #f7c43c, #eae039); /* Giallo Pokémon per richiamare le Pokéball */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a1a1a; /* Colore scuro per il testo */
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  background-color: #f7c43c; /* Giallo Pokémon */
+}
+
+.nav-link:hover {
+  color: white;
+  background-color: #f28500; /* Giallo scuro o arancione Pokémon */
+  transform: scale(1.05); /* Leggero ingrandimento al passaggio del mouse */
+}
+
+.nav-link.active-menu {
+  color: white;
+  background-color: #d83d3d; /* Colore rosso per l'attivo (Pokéball) */
+}
+
+.router-outlet {
+  margin-top: 20px;
+}
+
+/* Effetti hover sulle voci del menu */
+.nav-link:active, .nav-link:focus {
+  background-color: #fa9b24; /* Un altro giallo/arancio per il focus */
+}
+
+/* Media query per adattabilità su dispositivi mobili */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    margin: 5px 0;
+  }
+}
