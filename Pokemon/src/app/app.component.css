@@ -1,0 +1,148 @@
+/* Reset delle margin e padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Impostazioni generali */
+body {
+  font-family: 'Press Start 2P', cursive; /* Font pixelato in stile Pokémon */
+  background-color: #f9f9f9; /* Sfondo più chiaro */
+  color: #333; /* Colore del testo scuro per buona leggibilità */
+}
+
+/* Navbar */
+.navbar {
+  background-color: #f7c43c; /* Colore giallo Pokémon */
+  border-radius: 50px; /* Bordo arrotondato */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  display: flex;
+  justify-content: center; /* Centrato orizzontalmente */
+  align-items: center; /* Centrato verticalmente */
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center; /* Centra i link orizzontalmente */
+  padding: 10px 0;
+}
+
+.nav-item {
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 20px; /* Font più grande per i link */
+  font-weight: bold;
+  color: #1a1a1a; /* Colore scuro per il testo */
+  padding: 12px 18px;
+  border-radius: 25px; /* Bordo arrotondato, come una Pokéball */
+  background-color: #f7c43c; /* Giallo Pokémon */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: block;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.nav-link:hover {
+  background-color: #eae039; /* Giallo più scuro */
+  color: white;
+  transform: scale(1.05); /* Leggero ingrandimento */
+}
+
+.nav-link.active-menu {
+  background-color: #d83d3d; /* Rosso per l'attivo, come la Pokéball */
+  color: white;
+}
+
+/* Focus e Active link */
+.nav-link:focus, .nav-link:active {
+  outline: none;
+  background-color: #fa9b24; /* Arancio Pokémon */
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8); /* Ombra arancio per focus */
+}
+
+/* Router outlet */
+.router-outlet {
+  margin-top: 20px;
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-link {
+    margin: 5px 0;
+    padding: 10px 20px;
+  }
+}
+
+
+
+/* Pop-up overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Pop-up content */
+.popup-content {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  width: 320px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.popup-content img {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.popup-content h2 {
+  color: #f7c43c; /* Giallo Pokémon */
+  margin-bottom: 15px;
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+.popup-content p {
+  margin: 8px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Bottone chiudi */
+.popup-content button {
+  margin-top: 20px;
+  background-color: #f7c43c;
+  color: #222;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popup-content button:hover {
+  background-color: #e5a800;
+}

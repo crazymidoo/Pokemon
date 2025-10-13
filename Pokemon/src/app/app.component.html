@@ -1,14 +1,135 @@
-<div class="container">
-  <nav class="navbar navbar-expand-lg bg-light">
-    <ul class="navbar-nav flex-row me-auto mb-2 mb-lg-0">
-      <li class="nav-item"><a class="nav-link px-3" routerLink="/generazione/1" routerLinkActive="active-menu">Generazione 1</a></li>
-      <li class="nav-item"><a class="nav-link px-3" routerLink="/generazione/2" routerLinkActive="active-menu">Generazione 2</a></li>
-      <li class="nav-item"><a class="nav-link px-3" routerLink="/generazione/3" routerLinkActive="active-menu">Generazione 3</a></li>
-      <li class="nav-item"><a class="nav-link px-3" routerLink="/generazione/4" routerLinkActive="active-menu">Generazione 4</a></li>
-      <li class="nav-item"><a class="nav-link px-3" routerLink="/generazione/5" routerLinkActive="active-menu">Generazione 5</a></li>
-      <li class="nav-item"><a class="nav-link px-3" routerLink="/generazione/6" routerLinkActive="active-menu">Generazione 6</a></li>
-    </ul>
-  </nav>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La tua pagina Pokémon</title>
+  
+  <!-- Importa il font Press Start 2P da Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <!-- Link a Bootstrap (se non lo hai già incluso nel progetto) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <router-outlet></router-outlet>
-</div>
+  <!-- Stile personalizzato -->
+  <style>
+    /* Reset delle margin e padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Impostazioni generali */
+    body {
+      font-family: 'Press Start 2P', cursive; /* Font pixelato in stile Pokémon */
+      background-color: #f9f9f9; /* Sfondo più chiaro */
+      color: #333; /* Colore del testo scuro per buona leggibilità */
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: transparent; /* Rimuove lo sfondo dalla navbar */
+      padding: 5px 0; /* Ridotto padding per ridurre l'altezza della navbar */
+      border-bottom: none; /* Rimuove la striscia sotto la navbar */
+    }
+
+    .navbar-nav {
+      display: flex;
+      justify-content: center; /* Centra i link orizzontalmente */
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-item {
+      list-style: none;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      font-size: 18px; /* Font più piccolo per ridurre le dimensioni */
+      font-weight: bold;
+      color: #1a1a1a; /* Colore scuro per il testo */
+      padding: 8px 15px; /* Ridotto padding per evitare che la navbar sia troppo alta */
+      border-radius: 25px; /* Bordo arrotondato, come una Pokéball */
+      border: 2px solid #f7c43c; /* Aggiungi un bordo giallo per richiamare il tema Pokémon */
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: block;
+      margin: 0 5px; /* Distanza tra i link */
+      text-align: center;
+    }
+
+    .nav-link:hover {
+      background-color: #eae039; /* Giallo più scuro per l'effetto hover */
+      color: white; /* Testo bianco al passaggio del mouse */
+      transform: scale(1.05); /* Leggero ingrandimento */
+    }
+
+    .nav-link.active-menu {
+      background-color: transparent; /* Nessun sfondo per il link attivo */
+      color: #d83d3d; /* Rosso Pokémon per il link attivo */
+      border-color: #d83d3d; /* Bordi rossi per l'attivo */
+    }
+
+    /* Focus e Active link */
+    .nav-link:focus, .nav-link:active {
+      outline: none;
+      background-color: #fa9b24; /* Arancio Pokémon per il focus */
+      box-shadow: 0 0 10px rgba(255, 165, 0, 0.8); /* Ombra arancio per focus */
+    }
+
+    /* Router outlet */
+    .router-outlet {
+      margin-top: 20px;
+    }
+
+    /* Media query per dispositivi mobili */
+    @media (max-width: 768px) {
+      .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-link {
+        margin: 5px 0;
+        padding: 8px 20px; /* Maggiore padding per la versione mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Contenitore principale -->
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <ul class="navbar-nav flex-row me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link px-3" routerLink="/generazione/1" routerLinkActive="active-menu">Generazione 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" routerLink="/generazione/2" routerLinkActive="active-menu">Generazione 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" routerLink="/generazione/3" routerLinkActive="active-menu">Generazione 3</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" routerLink="/generazione/4" routerLinkActive="active-menu">Generazione 4</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" routerLink="/generazione/5" routerLinkActive="active-menu">Generazione 5</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" routerLink="/generazione/6" routerLinkActive="active-menu">Generazione 6</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Il contenuto della pagina (dove viene visualizzato il routing) -->
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- Bootstrap JS (se non lo hai già incluso) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
