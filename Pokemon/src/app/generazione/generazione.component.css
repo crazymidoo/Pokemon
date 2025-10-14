@@ -1,9 +1,9 @@
 /* Contenitore principale */
 .container.pt-5 {
-  max-width: 1200px;
+  max-width: 12000px;
   margin: 0 auto;
   padding: 30px;
-  background-color: #fff;
+  background-color: #fffb87;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -21,22 +21,25 @@
   align-items: center;
 }
 
-/* Carta Pokémon */
+
+/* Carta Pokémon con effetti migliorati */
 .list-group-item {
-  background-color: #f9f9f9;
-  border: 2px solid #f7c43c; /* Giallo Pokémon */
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f7c43c 20%, #ffeb61); /* Gradiente giallo */
+  border: 2px solid #f7c43c;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.2s ease;
   cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   padding: 15px;
   width: 220px;
   text-align: center;
+  position: relative;
 }
 
 .list-group-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(156, 141, 0, 0.2);
+  filter: brightness(1.1); /* Rende la carta più luminosa */
 }
 
 /* Immagine Pokémon */
@@ -45,12 +48,13 @@
   height: 150px;
   border-radius: 10px;
   margin-bottom: 10px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .list-group-item img:hover {
-  transform: scale(1.1);
+  transform: scale(1.6);
 }
+
 
 /* Testo */
 .fw-medium {

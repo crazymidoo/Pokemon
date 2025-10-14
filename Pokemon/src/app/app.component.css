@@ -1,89 +1,79 @@
-/* Reset delle margin e padding */
+/* Reset base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Impostazioni generali */
+/* Font e colori generali */
 body {
-  font-family: 'Press Start 2P', cursive; /* Font pixelato in stile Pokémon */
-  background-color: #f9f9f9; /* Sfondo più chiaro */
-  color: #333; /* Colore del testo scuro per buona leggibilità */
+  font-family: 'Press Start 2P', cursive;
+  background-image: url('https://img.freepik.com/vettori-premium/sfondo-giallo-fumetto-comico-con-tuono_530597-1590.jpg');
+   background-size: cover;       /* adatta l'immagine a tutto lo schermo */
+  background-position: center;  /* centra l'immagine */
+  background-repeat: no-repeat;
+  color: #333;
 }
 
-/* Navbar */
-.navbar {
-  background-color: #f7c43c; /* Colore giallo Pokémon */
-  border-radius: 50px; /* Bordo arrotondato */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
+/* Navbar personalizzata */
+.navbar-custom {
+  background-color: #fffb87;
+  border-radius: 10px;
+  padding: 15px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: center; /* Centrato orizzontalmente */
-  align-items: center; /* Centrato verticalmente */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
 }
 
-.navbar-nav {
-  display: flex;
-  justify-content: center; /* Centra i link orizzontalmente */
-  padding: 10px 0;
-}
-
-.nav-item {
-  list-style: none;
-}
-
-.nav-link {
+/* Stile link navbar */
+.navbar-custom a {
   text-decoration: none;
-  font-size: 20px; /* Font più grande per i link */
+  font-size: 12px;
   font-weight: bold;
-  color: #1a1a1a; /* Colore scuro per il testo */
-  padding: 12px 18px;
-  border-radius: 25px; /* Bordo arrotondato, come una Pokéball */
-  background-color: #f7c43c; /* Giallo Pokémon */
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  display: block;
-  margin: 0 10px;
-  text-align: center;
+  color: #1a1a1a;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: 2px solid #ec2424;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.2s ease;
 }
 
-.nav-link:hover {
-  background-color: #eae039; /* Giallo più scuro */
-  color: white;
-  transform: scale(1.05); /* Leggero ingrandimento */
+/* Hover link */
+.navbar-custom a:hover {
+  background-color: #ffffff00;
+  color: #ec2424;
+  transform: scale(1.05);
 }
 
-.nav-link.active-menu {
-  background-color: #d83d3d; /* Rosso per l'attivo, come la Pokéball */
-  color: white;
+/* Link attivo */
+.navbar-custom a.active-menu {
+  background-color: transparent;
+  color: #ec2424;
+  border-color: #ec2424;
 }
 
-/* Focus e Active link */
-.nav-link:focus, .nav-link:active {
+/* Focus link */
+.navbar-custom a:focus,
+.navbar-custom a:active {
   outline: none;
-  background-color: #fa9b24; /* Arancio Pokémon */
-  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8); /* Ombra arancio per focus */
+  background-color: #fa9b24;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.8);
 }
 
-/* Router outlet */
-.router-outlet {
-  margin-top: 20px;
-}
-
-/* Media query per dispositivi mobili */
+/* Responsive */
 @media (max-width: 768px) {
-  .navbar-nav {
+  .navbar-custom {
     flex-direction: column;
-    align-items: center;
   }
 
-  .nav-link {
-    margin: 5px 0;
-    padding: 10px 20px;
+  .navbar-custom a {
+    width: 100%;
+    text-align: center;
   }
 }
-
-
 
 /* Pop-up overlay */
 .popup-overlay {
