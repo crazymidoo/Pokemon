@@ -38,7 +38,7 @@ mydb.commit()
 poke_stats = pd.read_csv('Pokemon.csv', index_col=False, delimiter=',')
 poke_stats = poke_stats.fillna('Null')
 print(poke_stats.head(20))
-
+ 
 max_name_length = 255
 
 sql = """
