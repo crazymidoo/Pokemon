@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La tua pagina Pokémon</title>
@@ -15,11 +12,18 @@
   <style>
     /* Incolla qui tutto il CSS fornito sopra */
   </style>
-</head>
-<body>
 
+  
+<div [ngStyle]="{
+  'background-image': backgroundImage,
+  'background-size': 'cover',
+  'background-position': 'center',
+  'background-repeat': 'no-repeat',
+  'background-attachment': 'fixed',
+  'min-height': '100vh',
+  'width': '100vw'
+}">
   <div class="container pt-5">
-    <!-- NAVBAR PERSONALIZZATA -->
     <nav class="navbar-custom">
       <a routerLink="/generazione/1" routerLinkActive="active-menu">Generazione 1</a>
       <a routerLink="/generazione/2" routerLinkActive="active-menu">Generazione 2</a>
@@ -29,11 +33,9 @@
       <a routerLink="/generazione/6" routerLinkActive="active-menu">Generazione 6</a>
     </nav>
 
-    <!-- ROUTER VIEW -->
     <router-outlet></router-outlet>
   </div>
+</div>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>

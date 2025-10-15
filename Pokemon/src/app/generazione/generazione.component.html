@@ -4,7 +4,7 @@
     @for (p of pokemonList; track p) {
       <div class="col mt-3" (click)="showPokemonDetails(p)">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item d-flex flex-column align-items-center text-center">
+          <li class="list-group-item d-flex flex-column align-items-center text-center custom-rounded">
             <p class="fw-medium">
               <img [src]="p.image" alt="{{ p.name }}" width="200" height="200" class="mb-2" /><br>
               ID Pokedex: {{ p.id }}<br>

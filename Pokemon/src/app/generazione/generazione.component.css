@@ -3,8 +3,8 @@
   max-width: 12000px;
   margin: 0 auto;
   padding: 30px;
-  background-color: #fffb87;
-  border-radius: 10px;
+  background-color: #fffb87a2;
+  border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -24,7 +24,6 @@
 
 /* Carta Pokémon con effetti migliorati */
 .list-group-item {
-  border-radius: 20px;
   background: linear-gradient(135deg, #f7c43c 20%, #ffeb61); /* Gradiente giallo */
   border: 2px solid #f7c43c;
   transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.2s ease;
@@ -34,6 +33,9 @@
   width: 220px;
   text-align: center;
   position: relative;
+}
+.custom-rounded {
+  border-radius: 20px !important;
 }
 
 .list-group-item:hover {
