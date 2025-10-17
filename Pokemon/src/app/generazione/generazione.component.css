@@ -128,3 +128,34 @@
 .popup-content button:hover {
   background-color: #e5a800;
 }
+
+/* 🎬 ANIMAZIONI: ENTRATA / USCITA */
+.popup-content.enter {
+  animation: popup-in 0.3s ease forwards;
+}
+
+.popup-content.leave {
+  animation: popup-out 0.3s ease forwards;
+}
+
+@keyframes popup-in {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popup-out {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}

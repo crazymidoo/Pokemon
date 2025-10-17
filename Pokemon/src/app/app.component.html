@@ -7,7 +7,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <div [ngStyle]="{
-  'background-image': backgroundImage,
+  'background-image': 'url(' + backgroundImage + ')',
   'background-size': 'cover',
   'background-position': 'center',
   'background-repeat': 'no-repeat',
@@ -19,7 +19,6 @@
   <div class="container pt-5">
     <nav class="navbar-custom">
       <img src="https://images.icon-icons.com/2248/PNG/512/pokeball_icon_136305.png" alt="Pokeball sinistra" class="navbar-image">
-
       <div class="navbar-buttons-wrapper">
         <a routerLink="/generazione/1" routerLinkActive="active-menu">Generazione 1</a>
         <a routerLink="/generazione/2" routerLinkActive="active-menu">Generazione 2</a>
@@ -28,7 +27,6 @@
         <a routerLink="/generazione/5" routerLinkActive="active-menu">Generazione 5</a>
         <a routerLink="/generazione/6" routerLinkActive="active-menu">Generazione 6</a>
       </div>
-
       <img src="https://images.icon-icons.com/2248/PNG/512/pokeball_icon_136305.png" alt="Pokeball destra" class="navbar-image">
     </nav>
 

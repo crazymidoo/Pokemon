@@ -19,7 +19,7 @@
 
 <!-- Pop-up per visualizzare le statistiche del Pokémon -->
 <div *ngIf="selectedPokemon" class="popup-overlay">
-  <div class="popup-content">
+  <div class="popup-content" [class.enter]="popupAnimationClass === 'enter'" [class.leave]="popupAnimationClass === 'leave'" (click)="$event.stopPropagation()">
     <img [src]="selectedPokemon.image" alt="{{ selectedPokemon.name }}" width="200" height="200" class="mb-2" />
     <h2>{{ selectedPokemon.name }}</h2>
     <p>ID Pokedex: {{ selectedPokemon.id }}</p>

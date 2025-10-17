@@ -17,7 +17,10 @@ export class GenerazioneComponent implements OnInit {
   loading: boolean = false;
   o!: Observable<Pokemon[]>;
   generation!: number;
-  selectedPokemon: Pokemon | null = null;  // Variabile per il Pokémon selezionato
+
+  selectedPokemon: Pokemon | null = null;
+  popupVisible: boolean = false;
+  popupAnimationClass: string = '';
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
 
@@ -41,13 +44,17 @@ export class GenerazioneComponent implements OnInit {
     });
   }
 
-  // Funzione per selezionare un Pokémon e mostrare il pop-up
   showPokemonDetails(pokemon: Pokemon): void {
     this.selectedPokemon = pokemon;
+    this.popupAnimationClass = 'enter';
+    this.popupVisible = true;
   }
 
-  // Funzione per chiudere il pop-up
   closePopup(): void {
-    this.selectedPokemon = null;
+    this.popupAnimationClass = 'leave';
+    setTimeout(() => {
+      this.popupVisible = false;
+      this.selectedPokemon = null;
+    }, 300);
   }
 }
