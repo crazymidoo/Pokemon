@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   loading!: boolean;
   o!: Observable<Pokemon[]>;
 
-  backgroundImage = '';
+  backgroundImage: string = '';
 
   backgrounds: Record<string, string> = {
     '1': "url('https://media.pokemoncentral.it/wiki/thumb/8/8d/KantoLGPE.png/800px-KantoLGPE.png')",
@@ -31,19 +31,21 @@ export class AppComponent implements OnInit {
     '6': "url('https://media.pokemoncentral.it/wiki/thumb/8/84/KalosXY.png/800px-KalosXY.png')",
   };
 
-constructor(private http: HttpClient, private router: Router) {
-  this.router.events.subscribe(event => {
-    if (event instanceof NavigationEnd) {
-      const match = event.url.match(/generazione\/(\d)/);
-      if (match && this.backgrounds[match[1]]) {
-        this.backgroundImage = this.backgrounds[match[1]];
-      } else {
-        this.backgroundImage = '';
-      }
-    }
-  });
-}
+  constructor(private http: HttpClient, private router: Router) {
+    // Imposto lo sfondo di default all’avvio
+    this.backgroundImage = this.backgrounds['1'];
 
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const match = event.url.match(/generazione\/(\d)/);
+        if (match && this.backgrounds[match[1]]) {
+          this.backgroundImage = this.backgrounds[match[1]];
+        } else {
+          this.backgroundImage = '';
+        }
+      }
+    });
+  }
 
   getGen1() {
     this.loading = true;
