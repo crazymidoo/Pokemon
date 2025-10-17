@@ -22,14 +22,14 @@ export class AppComponent implements OnInit {
 
   backgroundImage = '';
 
-backgrounds: Record<string, string> = {
-  '1': "url('https://media.pokemoncentral.it/wiki/thumb/8/8d/KantoLGPE.png/800px-KantoLGPE.png')",
-  '2': "url('https://media.pokemoncentral.it/wiki/thumb/7/7d/JohtoHGSS.png/800px-JohtoHGSS.png')",
-  '3': "url('https://media.pokemoncentral.it/wiki/thumb/f/ff/HoennROZA.png/800px-HoennROZA.png')",
-  '4': "url('https://media.pokemoncentral.it/wiki/thumb/7/73/SinnohDLPS.png/800px-SinnohDLPS.png')",
-  '5': "url('https://media.pokemoncentral.it/wiki/thumb/3/37/UnimaN2B2.png/800px-UnimaN2B2.png')",
-  '6': "url('https://media.pokemoncentral.it/wiki/thumb/8/84/KalosXY.png/800px-KalosXY.png')",
-};
+  backgrounds: Record<string, string> = {
+    '1': "url('https://media.pokemoncentral.it/wiki/thumb/8/8d/KantoLGPE.png/800px-KantoLGPE.png')",
+    '2': "url('https://media.pokemoncentral.it/wiki/thumb/7/7d/JohtoHGSS.png/800px-JohtoHGSS.png')",
+    '3': "url('https://media.pokemoncentral.it/wiki/thumb/f/ff/HoennROZA.png/800px-HoennROZA.png')",
+    '4': "url('https://media.pokemoncentral.it/wiki/thumb/7/73/SinnohDLPS.png/800px-SinnohDLPS.png')",
+    '5': "url('https://media.pokemoncentral.it/wiki/thumb/3/37/UnimaN2B2.png/800px-UnimaN2B2.png')",
+    '6': "url('https://media.pokemoncentral.it/wiki/thumb/8/84/KalosXY.png/800px-KalosXY.png')",
+  };
 
 constructor(private http: HttpClient, private router: Router) {
   this.router.events.subscribe(event => {
